@@ -4,7 +4,6 @@ import dagger.Component
 import dagger.android.AndroidInjector
 import dagger.android.support.AndroidSupportInjectionModule
 import kr.co.cools.today.TodayApplication
-import kr.co.cools.today.ui.main.di.MainActivityModule
 import javax.inject.Singleton
 
 @Singleton
@@ -12,6 +11,7 @@ import javax.inject.Singleton
     modules = [
         AndroidSupportInjectionModule::class,
         TodayAppModule::class,
+        ViewModelModule::class,
         ActivityBindingModule::class
     ]
 )

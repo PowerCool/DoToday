@@ -2,13 +2,13 @@ package kr.co.cools.today.ui.main
 
 import android.content.Context
 import io.reactivex.disposables.CompositeDisposable
-import io.reactivex.disposables.Disposable
 import kr.co.cools.today.repo.TodayRepository
 import kr.co.cools.today.rx.asDriver
 import kr.co.cools.today.rx.disposableBag
 import timber.log.Timber
+import javax.inject.Inject
 
-class MainInteractor(val context: Context, var repo: TodayRepository) {
+class MainInteractor @Inject constructor(val context: Context, var repo: TodayRepository) {
 
     private val compositeDisposable = CompositeDisposable()
 
@@ -23,6 +23,10 @@ class MainInteractor(val context: Context, var repo: TodayRepository) {
                     Timber.v("error")
                 }
             ).disposableBag(compositeDisposable)
+    }
+
+    fun release() {
+        compositeDisposable.clear()
     }
 }
 
