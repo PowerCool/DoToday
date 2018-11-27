@@ -1,9 +1,6 @@
 package kr.co.cools.today.repo.dao
 
-import android.arch.persistence.room.Dao
-import android.arch.persistence.room.Delete
-import android.arch.persistence.room.Insert
-import android.arch.persistence.room.Query
+import android.arch.persistence.room.*
 import io.reactivex.Single
 import kr.co.cools.today.repo.entities.Todo
 
@@ -16,8 +13,14 @@ interface TodoDao {
     fun getAll(dayOfWeek: String): Single<List<Todo>>
 
     @Insert
-    fun insert(vararg todo: Todo)
+    fun insert(vararg todo: Todo): LongArray
+
+    @Update
+    fun update(todo: Todo)
 
     @Delete
     fun delete(todo: Todo)
+
+    @Query("DELETE FROM Todo")
+    fun deleteAll()
 }

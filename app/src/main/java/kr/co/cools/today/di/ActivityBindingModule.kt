@@ -7,8 +7,6 @@ import kr.co.cools.today.ui.main.MainActivity
 @Module
 abstract class ActivityBindingModule {
 
-    @ContributesAndroidInjector(
-        modules = [  ]
-    )
+    @ContributesAndroidInjector
     abstract fun mainActivity(): MainActivity
 }

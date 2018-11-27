@@ -1,6 +1,5 @@
 package kr.co.cools.today
 
-import android.arch.persistence.room.RoomDatabase
 import dagger.android.AndroidInjector
 import dagger.android.DaggerApplication
 import kr.co.cools.today.di.DaggerTodayComponent

@@ -24,6 +24,5 @@ class MainActivity : DaggerAppCompatActivity() {
 
         val viewModel = ViewModelProviders.of(this, viewModelFactory).get(MainViewModel::class.java)
         viewModel.updateToday()
-
     }
 }

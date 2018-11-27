@@ -7,6 +7,7 @@ import dagger.Provides
 import kr.co.cools.today.TodayApplication
 import kr.co.cools.today.repo.TodayRepository
 import kr.co.cools.today.repo.TodayRoomDatabase
+import kr.co.cools.today.repo.dao.JobDao
 import kr.co.cools.today.repo.dao.TodoDao
 import javax.inject.Singleton
 
@@ -31,12 +32,20 @@ class TodayAppModule {
             context,
             TodayRoomDatabase::class.java,
             "do-today"
-        ).build()
+        )
+            .fallbackToDestructiveMigration()
+            .build()
     }
 
     @Singleton
     @Provides
     fun todoDao(todayRoomDatabase: TodayRoomDatabase) : TodoDao {
         return todayRoomDatabase.todoDao()
+    }
+
+    @Singleton
+    @Provides
+    fun jobDao(todayRoomDatabase: TodayRoomDatabase) : JobDao {
+        return todayRoomDatabase.jobDao()
     }
 }
