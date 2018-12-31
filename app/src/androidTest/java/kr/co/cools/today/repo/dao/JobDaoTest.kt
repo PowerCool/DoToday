@@ -2,8 +2,8 @@ package kr.co.cools.today.repo.dao
 
 import android.support.test.runner.AndroidJUnit4
 import kr.co.cools.today.repo.entities.DayOfWeek
-import kr.co.cools.today.repo.entities.JobTodo
-import kr.co.cools.today.repo.entities.Todo
+import kr.co.cools.today.repo.entities.JobEntity
+import kr.co.cools.today.repo.entities.TodoEntity
 import org.junit.Test
 import org.junit.runner.RunWith
 import timber.log.Timber
@@ -21,27 +21,27 @@ class JobDaoTest: BaseDaoTest() {
         todoDao.deleteAll()
 
         val result = todoDao.insert(
-            Todo().apply {
+            TodoEntity().apply {
                 title = "job todo mon 1"
                 dayOfWeek = DayOfWeek.MON.nameOfDay
                 point = 100
             },
-            Todo().apply {
+            TodoEntity().apply {
                 title = "job todo mon 2"
                 dayOfWeek = DayOfWeek.MON.nameOfDay
                 point = 100
             },
-            Todo().apply {
+            TodoEntity().apply {
                 title = "job todo 2"
                 dayOfWeek = DayOfWeek.TUE.nameOfDay
                 point = 100
             },
-            Todo().apply {
+            TodoEntity().apply {
                 title = "job todo 3"
                 dayOfWeek = DayOfWeek.WED.nameOfDay
                 point = 100
             },
-            Todo().apply {
+            TodoEntity().apply {
                 title = "job todo 4"
                 dayOfWeek = DayOfWeek.THU.nameOfDay
                 point = 100
@@ -56,7 +56,7 @@ class JobDaoTest: BaseDaoTest() {
             .map {
                 it.forEach {
                     jobDao.insert(
-                        JobTodo().apply {
+                        JobEntity().apply {
                             date = "121212"
                             todo = it
                         }
@@ -82,7 +82,7 @@ class JobDaoTest: BaseDaoTest() {
             .map {
                 it.forEach {
                     jobDao.insert(
-                        JobTodo().apply {
+                        JobEntity().apply {
                             date = "121212"
                             todo = it
                         }

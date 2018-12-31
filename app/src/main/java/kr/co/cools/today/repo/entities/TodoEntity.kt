@@ -5,7 +5,7 @@ import android.arch.persistence.room.Entity
 import android.arch.persistence.room.PrimaryKey
 
 @Entity
-data class Todo(
+data class TodoEntity(
     @PrimaryKey(autoGenerate = true) var todoIndex: Int = 0,
     /**
      * [DayOfWeek] - 월,화,수,목,금,토,일

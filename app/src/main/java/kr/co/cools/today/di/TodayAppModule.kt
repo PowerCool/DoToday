@@ -21,8 +21,8 @@ class TodayAppModule {
 
     @Singleton
     @Provides
-    fun todayRepository(context: Context, todoDao: TodoDao): TodayRepository {
-        return TodayRepository(context, todoDao)
+    fun todayRepository(context: Context, todoDao: TodoDao, jobDao: JobDao): TodayRepository {
+        return TodayRepository(context, todoDao, jobDao)
     }
 
     @Singleton

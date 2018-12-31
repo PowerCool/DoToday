@@ -2,25 +2,25 @@ package kr.co.cools.today.repo.dao
 
 import android.arch.persistence.room.*
 import io.reactivex.Single
-import kr.co.cools.today.repo.entities.JobTodo
+import kr.co.cools.today.repo.entities.JobEntity
 
 @Dao
 interface JobDao{
-    @Query("SELECT * FROM jobtodo")
-    fun getAll() : Single<List<JobTodo>>
+    @Query("SELECT * FROM jobentity")
+    fun getAll() : Single<List<JobEntity>>
 
-    @Query("SELECT * FROM jobtodo WHERE dayOfWeek IN (:dayOfWeek)")
-    fun getAll(dayOfWeek: String) : Single<List<JobTodo>>
+    @Query("SELECT * FROM jobentity WHERE dayOfWeek IN (:dayOfWeek)")
+    fun getAll(dayOfWeek: String) : Single<List<JobEntity>>
 
     @Insert
-    fun insert(vararg jobTodo: JobTodo): LongArray
+    fun insert(vararg jobTodo: JobEntity): LongArray
 
     @Delete
-    fun delete(jobTodo: JobTodo)
+    fun delete(jobTodo: JobEntity)
 
-    @Query("DELETE FROM JobTodo")
+    @Query("DELETE FROM JobEntity")
     fun deleteAll()
 
     @Update
-    fun update(jobTodo: JobTodo)
+    fun update(jobTodo: JobEntity)
 }

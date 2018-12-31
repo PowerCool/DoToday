@@ -42,6 +42,12 @@ android {
 //    }
 }
 
+repositories {
+    maven{
+        url = 'https://dl.bintray.com/jeffjo/Common'
+    }
+}
+
 dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
     implementation"org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
@@ -71,6 +77,9 @@ dependencies {
 
     // 구글 guava
     implementation 'com.google.guava:guava:26.0-android'
+
+    //
+    implementation 'kr.co.cools.core:common:0.0.3'
 }
 
 // dagger

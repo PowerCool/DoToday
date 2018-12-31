@@ -2,8 +2,8 @@ package kr.co.cools.today
 
 import dagger.android.AndroidInjector
 import dagger.android.DaggerApplication
+import kr.co.cools.common.logger.Logger
 import kr.co.cools.today.di.DaggerTodayComponent
-import kr.co.cools.today.logger.TimberDebugTree
 import timber.log.Timber
 
 
@@ -14,6 +14,6 @@ class TodayApplication: DaggerApplication(){
 
     override fun onCreate() {
         super.onCreate()
-        Timber.plant(TimberDebugTree())
+        Logger.init(BuildConfig.DEBUG, "DoIt")
     }
 }

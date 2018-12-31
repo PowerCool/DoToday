@@ -2,7 +2,7 @@ package kr.co.cools.today.repo.dao
 
 import android.support.test.runner.AndroidJUnit4
 import kr.co.cools.today.repo.entities.DayOfWeek
-import kr.co.cools.today.repo.entities.Todo
+import kr.co.cools.today.repo.entities.TodoEntity
 import org.junit.Assert
 import org.junit.Test
 import org.junit.runner.RunWith
@@ -19,7 +19,7 @@ class TodoDaoTest: BaseDaoTest() {
 
     @Test
     fun insertOne() {
-        val todo = Todo().apply {
+        val todo = TodoEntity().apply {
             dayOfWeek = DayOfWeek.MON.nameOfDay
             title = "job 1"
             point = 100
@@ -30,13 +30,13 @@ class TodoDaoTest: BaseDaoTest() {
 
     @Test
     fun insertTwo() {
-        val todo = Todo().apply {
+        val todo = TodoEntity().apply {
             dayOfWeek = DayOfWeek.MON.nameOfDay
             title = "job 1"
             point = 100
         }
 
-        val todo1 = Todo().apply {
+        val todo1 = TodoEntity().apply {
             dayOfWeek = DayOfWeek.TUE.nameOfDay
             title = "job 2"
             point = 100

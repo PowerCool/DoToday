@@ -6,7 +6,7 @@ import dagger.Binds
 import dagger.MapKey
 import dagger.Module
 import dagger.multibindings.IntoMap
-import kr.co.cools.today.ui.main.MainViewModel
+import kr.co.cools.today.ui.launcher.LauncherViewModel
 import javax.inject.Inject
 import javax.inject.Provider
 import javax.inject.Singleton
@@ -20,8 +20,8 @@ abstract class ViewModelModule {
 
     @Binds
     @IntoMap
-    @ViewModelKey(MainViewModel::class)
-    internal abstract fun mainViewModel(viewModel: MainViewModel): ViewModel
+    @ViewModelKey(LauncherViewModel::class)
+    internal abstract fun mainViewModel(viewModel: LauncherViewModel): ViewModel
 
 }
 

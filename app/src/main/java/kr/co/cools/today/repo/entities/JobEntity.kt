@@ -4,7 +4,7 @@ import android.arch.persistence.room.*
 
 
 @Entity
-data class JobTodo(
+data class JobEntity(
     @PrimaryKey(autoGenerate = true)
     var jobIndex: Int = 0,
 
@@ -15,5 +15,5 @@ data class JobTodo(
     var date: String = "",
 
     @Embedded
-    var todo: Todo? = null
+    var todo: TodoEntity? = null
 )

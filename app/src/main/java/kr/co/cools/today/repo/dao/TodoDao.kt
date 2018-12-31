@@ -2,25 +2,25 @@ package kr.co.cools.today.repo.dao
 
 import android.arch.persistence.room.*
 import io.reactivex.Single
-import kr.co.cools.today.repo.entities.Todo
+import kr.co.cools.today.repo.entities.TodoEntity
 
 @Dao
 interface TodoDao {
-    @Query("SELECT * FROM todo")
-    fun getAll(): Single<List<Todo>>
+    @Query("SELECT * FROM todoentity")
+    fun getAll(): Single<List<TodoEntity>>
 
-    @Query("SELECT * FROM todo WHERE dayOfWeek IN (:dayOfWeek)")
-    fun getAll(dayOfWeek: String): Single<List<Todo>>
+    @Query("SELECT * FROM todoentity WHERE dayOfWeek IN (:dayOfWeek)")
+    fun getAll(dayOfWeek: String): Single<List<TodoEntity>>
 
     @Insert
-    fun insert(vararg todo: Todo): LongArray
+    fun insert(vararg todo: TodoEntity): LongArray
 
     @Update
-    fun update(todo: Todo)
+    fun update(todo: TodoEntity)
 
     @Delete
-    fun delete(todo: Todo)
+    fun delete(todo: TodoEntity)
 
-    @Query("DELETE FROM Todo")
+    @Query("DELETE FROM TodoEntity")
     fun deleteAll()
 }
